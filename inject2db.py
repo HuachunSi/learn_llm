@@ -50,6 +50,8 @@ DELETE FROM embeddings;
 """
 )
 
+os.environ['HF_ENDPOINT'] = "https://hf-mirror.com"
+
 model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
 
 # 处理 Markdown 文件

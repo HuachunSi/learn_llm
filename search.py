@@ -4,7 +4,6 @@ import sqlite3
 import numpy as np
 import os
 
-os.environ['HF_ENDPOINT'] = "https://hf-mirror.com"
 
 model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
@@ -45,8 +44,8 @@ def search(query, top_k=1):
 
 if __name__ == "__main__":
     # 测试搜索功能
-    query = "空气相对湿度"
-    results = search(query)
+    query = "相对湿度"
+    results = search(query, top_k=2)
     print(f"Top {len(results)} results for query: '{query}'")
     for filename, similarity in results:
         print(f"File: {filename}, Similarity: {similarity:.4f}")
